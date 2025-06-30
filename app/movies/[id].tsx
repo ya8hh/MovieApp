@@ -1,4 +1,4 @@
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { Link, useLocalSearchParams, useRouter } from "expo-router";
 import {
   ActivityIndicator,
   Image,
@@ -53,14 +53,17 @@ const Details = () => {
             className="w-full h-[550px]"
             resizeMode="stretch"
           />
-
+           <Link href={`/player/${id}`} asChild>
           <TouchableOpacity className="absolute bottom-5 right-5 rounded-full size-14 bg-white flex items-center justify-center">
+            
             <Image
               source={icons.play}
               className="w-6 h-7 ml-1"
               resizeMode="stretch"
             />
           </TouchableOpacity>
+          </Link>
+          
         </View>
 
         <View className="flex-col items-start justify-center mt-5 px-5">
@@ -124,6 +127,7 @@ const Details = () => {
         />
         <Text className="text-white font-semibold text-base">Go Back</Text>
       </TouchableOpacity>
+
     </View>
   );
 };
